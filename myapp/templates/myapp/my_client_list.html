@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1> {{ clients }} </h1>
+    {% if my_client_list %}
+        <ul>
+            {% for client in my_client_list %}
+                <li>
+                    <a href="{% url 'client-detail' client.pk %}"> {{ client.name }} </a>
+                    <span>{{ client.major }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No</p>
+    {% endif %}
+{% endblock %}

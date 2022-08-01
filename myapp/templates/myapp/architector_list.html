@@ -1,0 +1,10 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    {% for architector in architector_list %}
+        <li>
+            <a href="{% url "client-detail" architector.pk %}">{{architector.name}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

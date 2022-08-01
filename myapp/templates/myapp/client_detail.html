@@ -1,0 +1,8 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <p><strong> {{ client.name }} </strong></p>
+    <p><strong> {{ client.age }} </strong></p>
+    <p><strong> {{ client.major }} </strong></p>
+    <p>{% for book in client.books.all %}{{ book }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+{% endblock %}

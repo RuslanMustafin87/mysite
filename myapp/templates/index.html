@@ -1,0 +1,16 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Main page</h1>
+  {% if perms.myapp.example_perm %}
+    <p> Yes!!! </p>
+    <p> {{ user.username }}</p> </p>
+    <!-- We can mark a BookInstance as returned. -->
+    <!-- Perhaps add code to link to a "book return" view here. -->
+{% endif %}
+{% if user.is_staff %}
+<p> Staff!!! </p>
+<!-- We can mark a BookInstance as returned. -->
+<!-- Perhaps add code to link to a "book return" view here. -->
+{% endif %}
+{% endblock %}

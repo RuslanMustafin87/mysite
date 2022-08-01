@@ -1,0 +1,10 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <p><strong> {{ book.book }} </strong></p>
+    <p><strong> {{ book.summary }} </strong></p>
+    <hr>
+    {% if perms.myapp.can_edit_book %}
+    <a href="{% url 'book-update' book.pk %}">update</a>
+    {% endif %}
+{% endblock %}
